@@ -6,7 +6,7 @@
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 18:24:19 by lolivet           #+#    #+#             */
-/*   Updated: 2018/02/12 18:34:33 by lolivet          ###   ########.fr       */
+/*   Updated: 2018/02/13 08:56:33 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <stdio.h>
 
 # define BUFF_SIZE 32
 
 typedef struct		s_gnl
 {
-	int				fd;
-	char			*rest;
+	char			buf[BUFF_SIZE + 1];
+	int				j;
+	int				ret;
+	char			*tmp;
 }					t_gnl;
 
 typedef struct		s_list

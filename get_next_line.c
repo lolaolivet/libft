@@ -6,12 +6,11 @@
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/02 10:28:54 by lolivet           #+#    #+#             */
-/*   Updated: 2018/02/08 18:30:39 by lolivet          ###   ########.fr       */
+/*   Updated: 2018/02/13 08:57:41 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./get_next_line.h"
-#include "./libft/libft.h"
+#include "libft.h"
 #include <stdio.h>
 
 void	fill_rest(char **rest, char **ln, int i)
