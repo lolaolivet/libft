@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 15:04:15 by lolivet           #+#    #+#             */
-/*   Updated: 2018/05/21 16:41:22 by lolivet          ###   ########.fr       */
+/*   Created: 2018/05/21 18:22:02 by lolivet           #+#    #+#             */
+/*   Updated: 2018/05/21 18:50:30 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	char	*tmp;
-	size_t	i;
+	int a;
 
-	tmp = (char*)malloc(sizeof(char) * len + 1);
-	i = 0;
-	if (!tmp || !s)
-		return (NULL);
-	while (s[start] && i < len)
+	a = 0;
+	while (a < length)
 	{
-		tmp[i] = s[start];
-		start++;
-		i++;
+		f(tab[a]);
+		a++;
 	}
-	tmp[i] = '\0';
-	return (tmp);
 }

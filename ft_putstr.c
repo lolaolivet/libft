@@ -6,7 +6,7 @@
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 11:42:05 by lolivet           #+#    #+#             */
-/*   Updated: 2017/12/12 21:14:56 by lolivet          ###   ########.fr       */
+/*   Updated: 2018/05/22 14:51:17 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_putstr(char const *s)
 	int		i;
 
 	i = 0;
-	while (s && s[i])
+	if (!s)
+		return ;
+	while (s[i])
 	{
 		ft_putchar(s[i]);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 10:35:39 by lolivet           #+#    #+#             */
-/*   Updated: 2017/12/12 21:18:16 by lolivet          ###   ########.fr       */
+/*   Updated: 2018/05/21 16:34:26 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_striter(char *s, void (*f)(char *))
 	int		i;
 
 	i = 0;
-	while (s && s[i] && f)
+	if (!s || !f)
+		return ;
+	while (s[i])
 	{
 		f(&s[i]);
 		i++;

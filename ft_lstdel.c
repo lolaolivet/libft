@@ -6,7 +6,7 @@
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 16:03:04 by lolivet           #+#    #+#             */
-/*   Updated: 2017/12/02 10:46:45 by lolivet          ###   ########.fr       */
+/*   Updated: 2018/05/22 13:49:54 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list	*tmp;
 
+	if (!alst)
+		return ;
 	tmp = *alst;
 	while (*alst)
 	{

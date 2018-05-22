@@ -6,7 +6,7 @@
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 16:32:26 by lolivet           #+#    #+#             */
-/*   Updated: 2017/12/01 16:36:33 by lolivet          ###   ########.fr       */
+/*   Updated: 2018/05/22 13:50:25 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
+	if (!lst)
+		return ;
 	while (lst)
 	{
 		f(lst);

@@ -6,7 +6,7 @@
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 10:14:53 by lolivet           #+#    #+#             */
-/*   Updated: 2018/02/08 19:27:51 by lolivet          ###   ########.fr       */
+/*   Updated: 2018/05/21 16:32:13 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void**)as);
+	if (!as)
+		return ;
+	free(*as);
+	(*as) = NULL;
 }

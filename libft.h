@@ -6,7 +6,7 @@
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 18:24:19 by lolivet           #+#    #+#             */
-/*   Updated: 2018/02/13 08:56:33 by lolivet          ###   ########.fr       */
+/*   Updated: 2018/05/22 13:37:21 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_htoi
+{
+	int				msnibble;
+	int				digits;
+}					t_htoi;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -90,11 +96,18 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void const *content, size_t content_size);
+int					ft_htoi(char *str, int *result, int c, int i);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					get_next_line(const int fd, char **line);
+void				ft_exit(void);
+void				ft_foreach(int *tab, int length, void(*f)(int));
+void				ft_sort_table(int *tab, int size);
+int					ft_sort_asc_tab(int *tmp);
+int					ft_sort_desc_tab(int *tmp);
+void				ft_swap(int *a, int *b);
 
 #endif

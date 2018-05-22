@@ -6,14 +6,13 @@
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/02 10:28:54 by lolivet           #+#    #+#             */
-/*   Updated: 2018/02/13 08:57:41 by lolivet          ###   ########.fr       */
+/*   Updated: 2018/05/22 13:40:13 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	fill_rest(char **rest, char **ln, int i)
+static void	fill_rest(char **rest, char **ln, int i)
 {
 	char		*tmp;
 
@@ -31,7 +30,7 @@ void	fill_rest(char **rest, char **ln, int i)
 	*rest = ft_strdup(tmp + i + 1);
 }
 
-int		check_rest(char **rest, char **line)
+static int	check_rest(char **rest, char **line)
 {
 	if (!(*rest))
 		return (0);
@@ -59,7 +58,7 @@ int		check_rest(char **rest, char **line)
 	}
 }
 
-int		check_read(char **rest, int ret, char *buf, int j)
+static int	check_read(char **rest, int ret, char *buf, int j)
 {
 	if (ret < 0)
 	{
@@ -81,7 +80,7 @@ int		check_read(char **rest, int ret, char *buf, int j)
 	}
 }
 
-int		read_file(char **rest, char **ln, int fd, int i)
+static int	read_file(char **rest, char **ln, int fd, int i)
 {
 	int			return_read;
 	t_gnl		t;
@@ -110,7 +109,7 @@ int		read_file(char **rest, char **ln, int fd, int i)
 	return ((return_read = check_read(rest, t.ret, t.buf + i, t.j)));
 }
 
-int		get_next_line(const int fd, char **line)
+int			get_next_line(const int fd, char **line)
 {
 	static char	*rest = NULL;
 	int			check;

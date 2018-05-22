@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_sort_asc_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 15:04:15 by lolivet           #+#    #+#             */
-/*   Updated: 2018/05/21 16:41:22 by lolivet          ###   ########.fr       */
+/*   Created: 2018/05/21 18:28:50 by lolivet           #+#    #+#             */
+/*   Updated: 2018/05/21 18:40:46 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int		ft_sort_asc_tab(int *tmp)
 {
-	char	*tmp;
-	size_t	i;
+	int		i;
+	int		tmp2;
 
-	tmp = (char*)malloc(sizeof(char) * len + 1);
 	i = 0;
-	if (!tmp || !s)
-		return (NULL);
-	while (s[start] && i < len)
+	while (i < 3)
 	{
-		tmp[i] = s[start];
-		start++;
-		i++;
+		if (tmp[i] > tmp[i + 1])
+		{
+			tmp2 = tmp[i];
+			tmp[i] = tmp[i + 1];
+			tmp[i + 1] = tmp2;
+			i = 0;
+		}
+		else
+			i++;
 	}
-	tmp[i] = '\0';
-	return (tmp);
+	return (tmp[0]);
 }
