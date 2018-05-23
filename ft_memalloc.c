@@ -6,7 +6,7 @@
 /*   By: lolivet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:59:48 by lolivet           #+#    #+#             */
-/*   Updated: 2018/05/22 14:42:24 by lolivet          ###   ########.fr       */
+/*   Updated: 2018/05/23 12:12:14 by lolivet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,11 @@
 
 void	*ft_memalloc(size_t size)
 {
-	size_t	*tmp;
-	size_t	i;
+	void    *ptr;
 
-	i = 0;
-	if (!size)
+	if (!((ptr = malloc(size))))
 		return (NULL);
-	tmp = (size_t*)malloc(sizeof(size_t) * size);
-	if (!tmp)
-		return (NULL);
-	while (tmp[i])
-	{
-		if (i <= size)
-		{
-			tmp[i] = 0;
-			i++;
-		}
-		else
-			return (NULL);
-	}
-	return (tmp);
+	if (ptr)
+		ft_bzero(ptr, size);
+	return (ptr);
 }
